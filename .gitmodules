@@ -1,3 +1,6 @@
 [submodule "meta-intel"]
 	path = meta-intel
 	url = ssh://git@github.com/sesamstrasse/meta-intel.git
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = ssh://git@github.com/sesamstrasse/meta-openembedded.git
