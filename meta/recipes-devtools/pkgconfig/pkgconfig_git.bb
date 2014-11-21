@@ -1,13 +1,13 @@
 require pkgconfig.inc
 
-SRC_URI = "git://anongit.freedesktop.org/pkg-config;protocol=git \
-           file://autofoo.patch \
-           file://glibconfig-sysdefs.h"
+SRC_URI = "git://anongit.freedesktop.org/pkg-config \
+           file://autofoo.patch"
 
 S = "${WORKDIR}/git/"
 
 SRCREV = "66d49f1375fec838bcd301bb4ca2ef76cee0e47c"
 PV = "0.23+git${SRCPV}"
+PR = "r1"
 
 DEFAULT_PREFERENCE = "-1"
 
