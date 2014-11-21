@@ -9,4 +9,8 @@ BBLAYERS ?= " \
   ##COREBASE##/meta \
   ##COREBASE##/meta-yocto \
   ##COREBASE##/meta-yocto-bsp \
+  ##COREBASE##/meta-intel \
+  ##COREBASE##/meta-intel/meta-cedartrail \
+  ##COREBASE##/meta-openembedded/meta-oe \
+  ##COREBASE##/meta-joe \
   "

@@ -1,0 +1,122 @@
+diff --git a/extra/crystalhd_wrapper/crystalhd_common.c b/extra/crystalhd_wrapper/crystalhd_common.c
+index c26d5a5..e0c7eb0 100644
+--- a/extra/crystalhd_wrapper/crystalhd_common.c
++++ b/extra/crystalhd_wrapper/crystalhd_common.c
+@@ -48,7 +48,7 @@ const char *string_of_BC_STATUS(BC_STATUS status)
+ 		STATUS(CERT_VERIFY_ERROR);
+ 		STATUS(DEC_EXIST_OPEN);
+ 		STATUS(PENDING);
+-		STATUS(CLK_NOCHG);
++//		STATUS(CLK_NOCHG);
+ 		STATUS(ERROR);
+ #undef STATUS
+ 	}
+diff --git a/src/crystalhd_drv_video.c b/src/crystalhd_drv_video.c
+index 5fbae33..8f99f6a 100644
+--- a/src/crystalhd_drv_video.c
++++ b/src/crystalhd_drv_video.c
+@@ -1828,7 +1828,7 @@ crystalhd_Terminate(
+ }
+ 
+ VAStatus
+-__vaDriverInit_0_31(
++__vaDriverInit_0_32(
+ 		VADriverContextP ctx
+ 	)
+ {
+@@ -1848,50 +1848,50 @@ __vaDriverInit_0_31(
+ 	ctx->max_display_attributes = CRYSTALHD_MAX_DISPLAY_ATTRIBUTES;
+ 	ctx->str_vendor = CRYSTALHD_STR_VENDOR;
+ 
+-	ctx->vtable.vaTerminate = crystalhd_Terminate;
+-	ctx->vtable.vaQueryConfigEntrypoints = crystalhd_QueryConfigEntrypoints;
+-	ctx->vtable.vaQueryConfigProfiles = crystalhd_QueryConfigProfiles;
+-	ctx->vtable.vaQueryConfigEntrypoints = crystalhd_QueryConfigEntrypoints;
+-	ctx->vtable.vaQueryConfigAttributes = crystalhd_QueryConfigAttributes;
+-	ctx->vtable.vaCreateConfig = crystalhd_CreateConfig;
+-	ctx->vtable.vaDestroyConfig = crystalhd_DestroyConfig;
+-	ctx->vtable.vaGetConfigAttributes = crystalhd_GetConfigAttributes;
+-	ctx->vtable.vaCreateSurfaces = crystalhd_CreateSurfaces;
+-	ctx->vtable.vaDestroySurfaces = crystalhd_DestroySurfaces;
+-	ctx->vtable.vaCreateContext = crystalhd_CreateContext;
+-	ctx->vtable.vaDestroyContext = crystalhd_DestroyContext;
+-	ctx->vtable.vaCreateBuffer = crystalhd_CreateBuffer;
+-	ctx->vtable.vaBufferSetNumElements = crystalhd_BufferSetNumElements;
+-	ctx->vtable.vaMapBuffer = crystalhd_MapBuffer;
+-	ctx->vtable.vaUnmapBuffer = crystalhd_UnmapBuffer;
+-	ctx->vtable.vaDestroyBuffer = crystalhd_DestroyBuffer;
+-	ctx->vtable.vaBeginPicture = crystalhd_BeginPicture;
+-	ctx->vtable.vaRenderPicture = crystalhd_RenderPicture;
+-	ctx->vtable.vaEndPicture = crystalhd_EndPicture;
+-	ctx->vtable.vaSyncSurface = crystalhd_SyncSurface;
+-	ctx->vtable.vaQuerySurfaceStatus = crystalhd_QuerySurfaceStatus;
+-	ctx->vtable.vaPutSurface = crystalhd_PutSurface;
+-	ctx->vtable.vaQueryImageFormats = crystalhd_QueryImageFormats;
+-	ctx->vtable.vaCreateImage = crystalhd_CreateImage;
+-	ctx->vtable.vaDeriveImage = crystalhd_DeriveImage;
+-	ctx->vtable.vaDestroyImage = crystalhd_DestroyImage;
+-	ctx->vtable.vaSetImagePalette = crystalhd_SetImagePalette;
+-	ctx->vtable.vaGetImage = crystalhd_GetImage;
+-	ctx->vtable.vaPutImage = crystalhd_PutImage;
+-	ctx->vtable.vaQuerySubpictureFormats = crystalhd_QuerySubpictureFormats;
+-	ctx->vtable.vaCreateSubpicture = crystalhd_CreateSubpicture;
+-	ctx->vtable.vaDestroySubpicture = crystalhd_DestroySubpicture;
+-	ctx->vtable.vaSetSubpictureImage = crystalhd_SetSubpictureImage;
+-	ctx->vtable.vaSetSubpictureChromakey = crystalhd_SetSubpictureChromakey;
+-	ctx->vtable.vaSetSubpictureGlobalAlpha = crystalhd_SetSubpictureGlobalAlpha;
+-	ctx->vtable.vaAssociateSubpicture = crystalhd_AssociateSubpicture;
+-	ctx->vtable.vaDeassociateSubpicture = crystalhd_DeassociateSubpicture;
+-	ctx->vtable.vaQueryDisplayAttributes = crystalhd_QueryDisplayAttributes;
+-	ctx->vtable.vaGetDisplayAttributes = crystalhd_GetDisplayAttributes;
+-	ctx->vtable.vaSetDisplayAttributes = crystalhd_SetDisplayAttributes;
+-	ctx->vtable.vaLockSurface = crystalhd_LockSurface;
+-	ctx->vtable.vaUnlockSurface = crystalhd_UnlockSurface;
+-	ctx->vtable.vaBufferInfo = crystalhd_BufferInfo;
++	ctx->vtable->vaTerminate = crystalhd_Terminate;
++	ctx->vtable->vaQueryConfigEntrypoints = crystalhd_QueryConfigEntrypoints;
++	ctx->vtable->vaQueryConfigProfiles = crystalhd_QueryConfigProfiles;
++	ctx->vtable->vaQueryConfigEntrypoints = crystalhd_QueryConfigEntrypoints;
++	ctx->vtable->vaQueryConfigAttributes = crystalhd_QueryConfigAttributes;
++	ctx->vtable->vaCreateConfig = crystalhd_CreateConfig;
++	ctx->vtable->vaDestroyConfig = crystalhd_DestroyConfig;
++	ctx->vtable->vaGetConfigAttributes = crystalhd_GetConfigAttributes;
++	ctx->vtable->vaCreateSurfaces = crystalhd_CreateSurfaces;
++	ctx->vtable->vaDestroySurfaces = crystalhd_DestroySurfaces;
++	ctx->vtable->vaCreateContext = crystalhd_CreateContext;
++	ctx->vtable->vaDestroyContext = crystalhd_DestroyContext;
++	ctx->vtable->vaCreateBuffer = crystalhd_CreateBuffer;
++	ctx->vtable->vaBufferSetNumElements = crystalhd_BufferSetNumElements;
++	ctx->vtable->vaMapBuffer = crystalhd_MapBuffer;
++	ctx->vtable->vaUnmapBuffer = crystalhd_UnmapBuffer;
++	ctx->vtable->vaDestroyBuffer = crystalhd_DestroyBuffer;
++	ctx->vtable->vaBeginPicture = crystalhd_BeginPicture;
++	ctx->vtable->vaRenderPicture = crystalhd_RenderPicture;
++	ctx->vtable->vaEndPicture = crystalhd_EndPicture;
++	ctx->vtable->vaSyncSurface = crystalhd_SyncSurface;
++	ctx->vtable->vaQuerySurfaceStatus = crystalhd_QuerySurfaceStatus;
++	ctx->vtable->vaPutSurface = crystalhd_PutSurface;
++	ctx->vtable->vaQueryImageFormats = crystalhd_QueryImageFormats;
++	ctx->vtable->vaCreateImage = crystalhd_CreateImage;
++	ctx->vtable->vaDeriveImage = crystalhd_DeriveImage;
++	ctx->vtable->vaDestroyImage = crystalhd_DestroyImage;
++	ctx->vtable->vaSetImagePalette = crystalhd_SetImagePalette;
++	ctx->vtable->vaGetImage = crystalhd_GetImage;
++	ctx->vtable->vaPutImage = crystalhd_PutImage;
++	ctx->vtable->vaQuerySubpictureFormats = crystalhd_QuerySubpictureFormats;
++	ctx->vtable->vaCreateSubpicture = crystalhd_CreateSubpicture;
++	ctx->vtable->vaDestroySubpicture = crystalhd_DestroySubpicture;
++	ctx->vtable->vaSetSubpictureImage = crystalhd_SetSubpictureImage;
++	ctx->vtable->vaSetSubpictureChromakey = crystalhd_SetSubpictureChromakey;
++	ctx->vtable->vaSetSubpictureGlobalAlpha = crystalhd_SetSubpictureGlobalAlpha;
++	ctx->vtable->vaAssociateSubpicture = crystalhd_AssociateSubpicture;
++	ctx->vtable->vaDeassociateSubpicture = crystalhd_DeassociateSubpicture;
++	ctx->vtable->vaQueryDisplayAttributes = crystalhd_QueryDisplayAttributes;
++	ctx->vtable->vaGetDisplayAttributes = crystalhd_GetDisplayAttributes;
++	ctx->vtable->vaSetDisplayAttributes = crystalhd_SetDisplayAttributes;
++	ctx->vtable->vaLockSurface = crystalhd_LockSurface;
++	ctx->vtable->vaUnlockSurface = crystalhd_UnlockSurface;
++	ctx->vtable->vaBufferInfo = crystalhd_BufferInfo;
+ 
+ 	struct crystalhd_driver_data *driver_data = (struct crystalhd_driver_data *) malloc( sizeof(*driver_data) );
+ 	if ( NULL == driver_data )
+
